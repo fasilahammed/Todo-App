@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div>
-      {/* Bootstrap Navbar */}
+  
       <nav className="navbar navbar-dark bg-dark mb-4">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">TodoApp</a>
@@ -28,7 +28,7 @@ function App() {
       <div className="container">
         <h2 className="text-center mb-4">My Todo List</h2>
 
-        {/* Input + Button */}
+      
         <div className="input-group mb-3">
           <input
             type="text"
@@ -43,7 +43,7 @@ function App() {
           </button>
         </div>
 
-        {/* Task List */}
+       
         <ul className="list-group">
           {tasks.map((task, index) => (
             <li
