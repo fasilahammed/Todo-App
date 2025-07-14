@@ -7,7 +7,6 @@ function App() {
   const addTask = () => {
     const trimmed = taskInput.trim();
     if (trimmed === '') return;
-
     setTasks([...tasks, trimmed]);
     setTaskInput('');
   };
@@ -16,9 +15,12 @@ function App() {
     setTasks(tasks.filter((_, index) => index !== indexToDelete));
   };
 
+  const clearAllTasks = () => {
+    setTasks([]);
+  };
+
   return (
     <div>
-  
       <nav className="navbar navbar-dark bg-dark mb-4">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">TodoApp</a>
@@ -28,7 +30,6 @@ function App() {
       <div className="container">
         <h2 className="text-center mb-4">My Todo List</h2>
 
-      
         <div className="input-group mb-3">
           <input
             type="text"
@@ -43,7 +44,14 @@ function App() {
           </button>
         </div>
 
-       
+        {tasks.length > 0 && (
+          <div className="d-flex justify-content-end mb-2">
+            <button className="btn btn-danger btn-sm" onClick={clearAllTasks}>
+              Clear All
+            </button>
+          </div>
+        )}
+
         <ul className="list-group">
           {tasks.map((task, index) => (
             <li
@@ -66,4 +74,3 @@ function App() {
 }
 
 export default App;
-
